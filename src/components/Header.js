@@ -1,4 +1,4 @@
-import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { View, Image, TouchableOpacity } from "react-native";
 import { useTailwind } from "tailwind-rn";
