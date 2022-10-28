@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import * as Google from "expo-google-app-auth";
 // import {
 //   GoogleAuthProvider,
@@ -88,9 +94,21 @@ export const AuthProvider = ({ children }) => {
     // }
   };
 
+  const memoedValue = useMemo(
+    () => ({
+      user,
+      loading,
+      error,
+      signInWithGoogle,
+      logout,
+    }),
+    [user, loading, error]
+  );
+
   return (
     <AuthContext.Provider
-      value={{ user, loading, error, signInWithGoogle, logout }}
+      // if passed value like this, every time any changes occurs, entire tree have to re-render. So, we will be using useMemo. This will be using cache mechanism
+      value={memoedValue}
     >
       {!loadingInitial && children}
     </AuthContext.Provider>
