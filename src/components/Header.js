@@ -12,7 +12,7 @@ const Header = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={tw("flex-row items-center justify-between px-5 pt-1")}>
+    <View style={tw("flex-row items-center justify-between px-5")}>
       <TouchableOpacity onPress={logout}>
         <Image
           source={{ uri: user.photoURL }}
@@ -20,7 +20,7 @@ const Header = () => {
         />
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Modal")}>
         <Image
           source={{
             uri: "https://www.pngitem.com/pimgs/m/33-333622_tinder-icon-tinder-icon-png-transparent-png.png",

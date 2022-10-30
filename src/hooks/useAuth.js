@@ -34,17 +34,18 @@ export const AuthProvider = ({ children }) => {
   const [loadingInitial, setLoadingInitial] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const unsub = auth.onAuthStateChanged((user) => {
-      if (user) {
-        setUser(user);
-      } else {
-        setUser(null);
-      }
-      setLoadingInitial(false);
-    });
-    return unsub;
-  }, []);
+  useEffect(
+    () =>
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          setUser(user);
+        } else {
+          setUser(null);
+        }
+        setLoadingInitial(false);
+      }),
+    []
+  );
 
   const logout = () => {
     setLoading(true);

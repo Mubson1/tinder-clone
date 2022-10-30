@@ -11,9 +11,6 @@ import CardSwipe from "../components/CardSwipe";
 const HomeScreen = () => {
   const tw = useTailwind();
 
-  const { user, logout } = useAuth();
-  const navigation = useNavigation();
-
   return (
     <SafeAreaView style={[tw("flex-1"), safeArea]}>
       <Header />

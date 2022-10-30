@@ -1,5 +1,18 @@
-import { StatusBar } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 
 export const safeArea = {
   paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
 };
+
+export const styles = StyleSheet.create({
+  cardShadow: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 2,
+  },
+});

@@ -1,7 +1,9 @@
 import StackNavigator from "./src/navigator/StackNavigator";
 import { NavigationContainer } from "@react-navigation/native";
-import { AuthProvider } from "./src/hooks/useAuth";
 import { TailwindProvider } from "tailwind-rn";
+import { StatusBar } from "expo-status-bar";
+
+import { AuthProvider } from "./src/hooks/useAuth";
 import utilities from "./tailwind.json";
 
 export default function App() {
